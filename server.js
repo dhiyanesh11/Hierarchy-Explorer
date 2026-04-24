@@ -223,6 +223,10 @@ app.get("/bfhl", (_req, res) => {
   res.json({ operation_code: 1 });
 });
 
+// Export for Vercel serverless
+module.exports = app;
+
+// Start server for local dev / Render / Railway
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`BFHL API running on http://localhost:${PORT}`);
